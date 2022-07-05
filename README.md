@@ -274,3 +274,20 @@ npx jest --init
 ```
 
 ## Lint staged husky
+
+```jsx
+npm i -D lint-staged
+
+npm i -D husky
+https://github.com/typicode/husky
+
+// configurando husky
+npm set-script prepare "husky install"
+npm run prepare // verificando se husky está correto
+
+// criando um hook no husky no pre commit
+npx husky add .husky/pre-commit "npx lint-staged"
+
+// criando hook para executar testes
+npx husky add .husky/pre-push "npm run test:coverage"
+```
